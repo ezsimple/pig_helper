@@ -4,8 +4,12 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <meta charset="utf-8">
-<meta name="description" content="구버전 피그플랜 도우미">
-<meta name="author" content="mhlee@ezfarm.co.kr">
-<link href="/webjars/bootstrap/3.4.1/dist/css/bootstrap.css" rel="stylesheet">
-<script type="text/javascript" src="/webjars/jquery/3.5.0/dist/jquery.js"></script>
-<script type="text/javascript" src="/webjars/bootstrap/3.4.1/dist/js/bootstrap.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>AdminLTE 3 | Starter</title>
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="${_adminlte }/plugins/fontawesome-free/css/all.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="${_adminlte }/dist/css/adminlte.min.css">
+<!-- Google Font: Source Sans Pro -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">

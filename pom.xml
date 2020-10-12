@@ -248,6 +248,7 @@
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>org.webjars.bower</groupId>
 			<artifactId>bootstrap</artifactId>
@@ -258,6 +259,7 @@
 			<artifactId>jquery</artifactId>
 			<version>3.5.0</version>
 		</dependency>	
+		 -->
         <dependency>
             <groupId>javax.servlet.jsp.jstl</groupId>
             <artifactId>javax.servlet.jsp.jstl-api</artifactId>
