@@ -23,12 +23,8 @@ class HelperController {
 	PropertiesUtil propertiesUtil;
 
 	@RequestMapping(value= {"/"})
-	public String hello(ModelMap model, CommandMap commandMap) throws Exception {
+	public String index(ModelMap model, CommandMap commandMap) throws Exception {
 		commandMap.debugParams();
-		
-		String _adminlte = propertiesUtil.getProperty("adminlte");
-		model.addAttribute("_adminlte", _adminlte);
-		
 		return "index";
 	}
 
