@@ -46,7 +46,8 @@
               <div class="form-group">
                 <div class="input-group">
                   <div class="custom-file">
-                    <input type="file" name="file" class="custom-file-input" id="uploadFile">
+                    <input type="file" name="file" class="custom-file-input" id="uploadFile"
+                    accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
                     <label class="custom-file-label" for="uploadFile">파일을 선택하세요</label>
                   </div>
                 </div>

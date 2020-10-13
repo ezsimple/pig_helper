@@ -39,7 +39,7 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-        여기에 UI 구현하기
+        이 프로그램은 피그플랜(구) 운영팀을 위해 제작 되었습니다.
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
