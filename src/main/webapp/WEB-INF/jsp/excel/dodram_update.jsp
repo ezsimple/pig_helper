@@ -3,15 +3,15 @@
 <html lang="ko">
 
 <head>
-<%@include file="include/meta.jsp" %>
+<%@include file="../include/meta.jsp" %>
 </head>
 
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
-  <jsp:include page="include/nav.jsp">
-  	<jsp:param value="" name="s0"/>
-  	<jsp:param value="" name="s1"/>
+  <jsp:include page="../include/nav.jsp">
+  	<jsp:param value="active" name="s0"/>
+  	<jsp:param value="active" name="a5"/>
   </jsp:include>
 
   <!-- Content Wrapper. Contains page content -->
@@ -22,12 +22,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">시작하면서 ... </h1>
+            <h1 class="m-0 text-dark">요청시 도드람 농가 업데이트</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">시작하면서</li>
+              <li class="breadcrumb-item"><a href="/dl.do?key=${_key }&fid=6" target="_new">샘플포맷파일 다운로드</a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -48,10 +47,10 @@
 
   </div>
   <!-- /.content-wrapper -->
-  <%@include file="include/footer.jsp" %>
+  <%@include file="../include/footer.jsp" %>
 </div>
 <!-- ./wrapper -->
 
-<%@include file="include/script.jsp" %>
+<%@include file="../include/script.jsp" %>
 </body>
 </html>

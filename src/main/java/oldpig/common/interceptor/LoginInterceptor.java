@@ -1,6 +1,7 @@
 package oldpig.common.interceptor;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,8 +21,7 @@ import oldpig.utils.PropertiesUtil;
 @Slf4j
 public class LoginInterceptor extends HandlerInterceptorAdapter
 {	
-	SimpleDateFormat dateFormater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	final String BASE_MAPPING = "/egg/api";
+	SimpleDateFormat dateFormater = new SimpleDateFormat("yyyy-MM-dd");
 
 	@Autowired
 	PropertiesUtil propertiesUtil;
@@ -49,6 +49,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter
 	    session.setAttribute("_key", _key);
 	    session.setAttribute("_dateFormat", "yyyy-MM-dd");
 	    session.setAttribute("_now", _now.toDate());
+	    session.setAttribute("_date", dateFormater.format(new Date()));
+	    session.setAttribute("_year", _now.getYear());
 	    session.setAttribute("_ms", _ms);
 	    
 		return isIpAllowed();

@@ -1,4 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<c:set var="on_0" value="${param.s0 }" />
+<c:set var="on_1" value="${param.s1 }" />
+
+<c:set var="act_0" value="${param.a0 }" />
+<c:set var="act_1" value="${param.a1 }" />
+<c:set var="act_2" value="${param.a2 }" />
+<c:set var="act_3" value="${param.a3 }" />
+<c:set var="act_4" value="${param.a4 }" />
+<c:set var="act_5" value="${param.a5 }" />
+<c:set var="act_6" value="${param.a6 }" />
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -30,8 +42,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item has-treeview ${on_0 == 'active'?'menu-open':'' }">
+            <a href="#" class="nav-link ${on_0 }">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 엑셀업로드
@@ -40,7 +52,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/excel/yukjongga.do" class="nav-link ${act_0 }">
                   <i class="far fa-circle nav-icon"></i>
                   <p>월요일 육종가</p>
                 </a>
@@ -48,7 +60,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/excel/sisae.do" class="nav-link ${act_1 }">
                   <i class="far fa-circle nav-icon"></i>
                   <p>매달 시세</p>
                 </a>
@@ -56,7 +68,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/excel/farm_migration.do" class="nav-link ${act_2 }">
                   <i class="far fa-circle nav-icon"></i>
                   <p>농장 데이터 이관</p>
                 </a>
@@ -64,7 +76,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/excel/dabi_seangsi_chejung.do" class="nav-link ${act_3 }">
                   <i class="far fa-circle nav-icon"></i>
                   <p>다비육종 생시체중</p>
                 </a>
@@ -72,7 +84,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/excel/jumjungzaryu_imf.do" class="nav-link ${act_4 }">
                   <i class="far fa-circle nav-icon"></i>
                   <p>검정자료 IMF값</p>
                 </a>
@@ -80,7 +92,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/excel/dodram_update.do" class="nav-link ${act_5} }">
                   <i class="far fa-circle nav-icon"></i>
                   <p>도드람 농가 업데이트</p>
                 </a>
@@ -92,8 +104,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item has-treeview ${on_1 == 'active'?'menu-open':'' }">
+            <a href="#" class="nav-link ${on_1 }">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 엑셀 다운로드
@@ -102,7 +114,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/excel/jadondunggi_print.do" class="nav-link ${act_6} }">
                   <i class="far fa-circle nav-icon"></i>
                   <p>자돈등기 파일출력</p>
                 </a>

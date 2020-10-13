@@ -8,5 +8,7 @@
       피그플랜 운영팀
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2020 <a href="https://pigplan.io">pigplan.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2000-${sessionScope._year }
+    	<a href="http://biz.pigplan.co.kr">biz.pigplan.co.kr</a>.
+    </strong> All rights reserved.
   </footer>
