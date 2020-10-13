@@ -33,7 +33,18 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-        여기에 UI 구현하기
+          <!-- left column -->
+          <div class="col-md-6">
+          <!-- form start -->
+          <form role="form" method="POST" action="/excel/jadondunggi_print.do">
+            <div class="card-body">
+              <div class="form-group">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+          <!-- form end -->
+          </div><!-- left column -->
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->

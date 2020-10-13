@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import io.mkeasy.resolver.CommandMap;
 import lombok.extern.slf4j.Slf4j;
-import oldpig.helper.service.ExcelService;
+import oldpig.helper.service.HelperService;
 import oldpig.utils.PropertiesUtil;
 
 @Slf4j
@@ -27,14 +27,14 @@ class HelperController {
 	PropertiesUtil propertiesUtil;
 	
 	@Autowired
-	ExcelService excelService;
+	HelperService helperService;
 
 	// 월요일 육종가 업로드
 	@RequestMapping(value= {"/excel/yukjongga.do"}, method=RequestMethod.POST)
 	public String excel1(@RequestParam(value="file") MultipartFile file, ModelMap model, CommandMap commandMap) throws Exception {
 		commandMap.debugParams();
-		excelService.upload(file, model, commandMap);
-		return "excel/yukjongga";
+		helperService.excel1(file, model, commandMap);
+		return excel1(model, commandMap);
 	} 
 	// 월요일 육종가
 	@RequestMapping(value= {"/excel/yukjongga.do"}, method=RequestMethod.GET)
@@ -48,7 +48,8 @@ class HelperController {
 	@RequestMapping(value= {"/excel/sisae.do"}, method=RequestMethod.POST)
 	public String excel2(@RequestParam(value="file") MultipartFile file, ModelMap model, CommandMap commandMap) throws Exception {
 		commandMap.debugParams();
-		return "excel/sisae";
+		helperService.excel2(file, model, commandMap);
+		return excel2(model, commandMap);
 	} 
 	// 매달 시세
 	@RequestMapping(value= {"/excel/sisae.do"}, method=RequestMethod.GET)
@@ -63,7 +64,8 @@ class HelperController {
 	@RequestMapping(value= {"/excel/farm_migration.do"}, method=RequestMethod.POST)
 	public String excel3(@RequestParam(value="file") MultipartFile file, ModelMap model, CommandMap commandMap) throws Exception {
 		commandMap.debugParams();
-		return "excel/farm_migration";
+		helperService.excel3(file, model, commandMap);
+		return excel3(model, commandMap);
 	} 
 	// 농장데이터 이관
 	@RequestMapping(value= {"/excel/farm_migration.do"}, method=RequestMethod.GET)
@@ -78,7 +80,8 @@ class HelperController {
 	@RequestMapping(value= {"/excel/dabi_seangsi_chejung.do"}, method=RequestMethod.POST)
 	public String excel4(@RequestParam(value="file") MultipartFile file, ModelMap model, CommandMap commandMap) throws Exception {
 		commandMap.debugParams();
-		return "excel/farm_migration";
+		helperService.excel4(file, model, commandMap);
+		return excel4(model, commandMap);
 	} 
 	// 다비육종 생시체중
 	@RequestMapping(value= {"/excel/dabi_seangsi_chejung.do"}, method=RequestMethod.GET)
@@ -93,7 +96,8 @@ class HelperController {
 	@RequestMapping(value= {"/excel/jumjungzaryu_imf.do"}, method=RequestMethod.POST)
 	public String excel5(@RequestParam(value="file") MultipartFile file, ModelMap model, CommandMap commandMap) throws Exception {
 		commandMap.debugParams();
-		return "excel/jumjungzaryu_imf";
+		helperService.excel5(file, model, commandMap);
+		return excel5(model, commandMap);
 	} 
 	// 검정자료 IMF값
 	@RequestMapping(value= {"/excel/jumjungzaryu_imf.do"})
@@ -108,7 +112,8 @@ class HelperController {
 	@RequestMapping(value= {"/excel/dodram_update.do"}, method=RequestMethod.POST)
 	public String excel6(@RequestParam(value="file") MultipartFile file, ModelMap model, CommandMap commandMap) throws Exception {
 		commandMap.debugParams();
-		return "excel/dodram_update";
+		helperService.excel6(file, model, commandMap);
+		return excel6(model, commandMap);
 	} 
 	// 도드람농가 업데이트
 	@RequestMapping(value= {"/excel/dodram_update.do"})

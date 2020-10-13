@@ -40,23 +40,21 @@
         <div class="row">
           <!-- left column -->
           <div class="col-md-6">
-
-              <!-- form start -->
-              <form role="form" method="POST" action="/excel/yukjongga.do" enctype="multipart/form-data">
-                <div class="card-body">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" name="file" class="custom-file-input" id="uploadFile">
-                        <label class="custom-file-label" for="uploadFile">파일을 선택하세요</label>
-                      </div>
-                    </div>
+          <!-- form start -->
+          <form role="form" method="POST" action="/excel/yukjongga.do" enctype="multipart/form-data">
+            <div class="card-body">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input type="file" name="file" class="custom-file-input" id="uploadFile">
+                    <label class="custom-file-label" for="uploadFile">파일을 선택하세요</label>
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-              </form>
-              <!-- form end -->
-
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+          <!-- form end -->
           </div><!-- left column -->
         
         </div><!-- /.row -->

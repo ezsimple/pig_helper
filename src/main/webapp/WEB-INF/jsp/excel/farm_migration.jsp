@@ -38,7 +38,24 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-        여기에 UI 구현하기
+          <!-- left column -->
+          <div class="col-md-6">
+          <!-- form start -->
+          <form role="form" method="POST" action="/excel/farm_migration.do" enctype="multipart/form-data">
+            <div class="card-body">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input type="file" name="file" class="custom-file-input" id="uploadFile">
+                    <label class="custom-file-label" for="uploadFile">파일을 선택하세요</label>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+          <!-- form end -->
+          </div><!-- left column -->
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
