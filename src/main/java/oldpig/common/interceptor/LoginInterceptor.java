@@ -43,8 +43,10 @@ public class LoginInterceptor extends HandlerInterceptorAdapter
 	    long _ms = System.currentTimeMillis();
 	    LocalDateTime _now = LocalDateTime.now();
 	    String _adminlte = propertiesUtil.getProperty("adminlte");
+	    String _key = propertiesUtil.getProperty("download.key");
 
 	    session.setAttribute("_adminlte", _adminlte);
+	    session.setAttribute("_key", _key);
 	    session.setAttribute("_dateFormat", "yyyy-MM-dd");
 	    session.setAttribute("_now", _now.toDate());
 	    session.setAttribute("_ms", _ms);
@@ -58,7 +60,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter
 		if(profiles.length == 0)
 			profiles = env.getDefaultProfiles();
 		
-		log.debug("profiles => {}", profiles[0]);
+		// log.debug("profiles => {}", profiles[0]);
 		
 		return profiles[0];
 	}
