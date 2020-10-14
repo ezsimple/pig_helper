@@ -1,5 +1,12 @@
 package oldpig.helper.service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,8 +14,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.multipart.MultipartFile;
 
 import io.mkeasy.resolver.CommandMap;
+import io.mkeasy.webapp.processor.QueryFactory;
+import lombok.extern.slf4j.Slf4j;
 import oldpig.common.service.AbstractPigService;
 
+@Slf4j
 @Service
 public class HelperService extends AbstractPigService {
 	
@@ -17,10 +27,13 @@ public class HelperService extends AbstractPigService {
 
 	// 월요일 육종가
 	public String excel1(MultipartFile excelfile, ModelMap model, CommandMap commandMap) throws Exception {
-		excelService.upload(excelfile, model, commandMap);
-		JSONObject result = new JSONObject();
-		result.put("success", true);
-		return  result.toString(2);
+
+		List<Map<String, String>> result = excelService.upload(excelfile, model, commandMap);
+		log.debug("{}", result);
+
+		JSONObject res = new JSONObject();
+		res.put("success", true);
+		return  res.toString(2);
 	}
 
 
@@ -68,10 +81,31 @@ public class HelperService extends AbstractPigService {
 	}
 
 	// 자돈등기 파일출력
-	public String excel7(MultipartFile excelfile, ModelMap model, CommandMap commandMap) throws Exception {
-		JSONObject result = new JSONObject();
-		result.put("success", true);
-		return  result.toString(2);
+	public String excel7(HttpServletRequest request, HttpServletResponse response, ModelMap model, CommandMap commandMap) throws Exception {
+		
+		String ns = "oldegg.excel";
+	    String nsId="selectSuJadonEntity";
+	    
+	    Object result = QueryFactory.executeTx(ns, nsId, commandMap.getQueryMap());
+	    result = QueryFactory.getResult(ns, nsId, result);
+	    List<Map<String, Object>> list = QueryFactory.toList(result);
+	    
+	    String dnFileName = "자돈등기 파일.xlsx";
+
+		List<String> headerNames = new ArrayList<String>();
+		headerNames.add("농장번호");
+		headerNames.add("자돈번호");
+		
+		List<String> fieldNames = new ArrayList<String>();
+		fieldNames.add("farmNo");
+		fieldNames.add("jadonPigId");
+		
+	    excelService.download(request, response
+	    		, dnFileName, headerNames, fieldNames, list);
+		
+		JSONObject res = new JSONObject();
+		res.put("success", true);
+		return  res.toString(2);
 	}
 
 }
