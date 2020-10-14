@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -43,7 +44,8 @@ class HelperController {
 
 	// 월요일 육종가 업로드
 	@RequestMapping(value= {"/excel/yukjongga.do"}, method=RequestMethod.POST)
-	public String excel1(@RequestParam(value="file") MultipartFile file, ModelMap model, CommandMap commandMap) throws Exception {
+	public String excel1(@RequestParam(value="file") MultipartFile file
+			, ModelMap model, CommandMap commandMap) throws Exception {
 		commandMap.debugParams();
 		helperService.excel1(file, model, commandMap);
 		return VIEW_YUKJONGGA;
