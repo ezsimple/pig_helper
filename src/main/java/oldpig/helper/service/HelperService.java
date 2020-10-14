@@ -39,45 +39,45 @@ public class HelperService extends AbstractPigService {
 
 	// 매달 시세
 	public String excel2(MultipartFile excelfile, ModelMap model, CommandMap commandMap) throws Exception {
-		excelService.upload(excelfile, model, commandMap);
-		JSONObject result = new JSONObject();
-		result.put("success", true);
-		return  result.toString(2);
+		List<Map<String, String>> result = excelService.upload(excelfile, model, commandMap);
+		JSONObject res = new JSONObject();
+		res.put("success", true);
+		return  res.toString(2);
 	}
 
 
 	// 농장데이터 이관
 	public String excel3(MultipartFile excelfile, ModelMap model, CommandMap commandMap) throws Exception {
-		excelService.upload(excelfile, model, commandMap);
-		JSONObject result = new JSONObject();
-		result.put("success", true);
-		return  result.toString(2);
+		List<Map<String, String>> result = excelService.upload(excelfile, model, commandMap);
+		JSONObject res = new JSONObject();
+		res.put("success", true);
+		return  res.toString(2);
 	}
 
 
 	// 다비육종 생시체중
 	public String excel4(MultipartFile excelfile, ModelMap model, CommandMap commandMap) throws Exception {
-		excelService.upload(excelfile, model, commandMap);
-		JSONObject result = new JSONObject();
-		result.put("success", true);
-		return  result.toString(2);
+		List<Map<String, String>> result = excelService.upload(excelfile, model, commandMap);
+		JSONObject res = new JSONObject();
+		res.put("success", true);
+		return  res.toString(2);
 	}
 
 
 	// 검정자료 IMF값
 	public String excel5(MultipartFile excelfile, ModelMap model, CommandMap commandMap) throws Exception {
-		excelService.upload(excelfile, model, commandMap);
-		JSONObject result = new JSONObject();
-		result.put("success", true);
-		return  result.toString(2);
+		List<Map<String, String>> result = excelService.upload(excelfile, model, commandMap);
+		JSONObject res = new JSONObject();
+		res.put("success", true);
+		return  res.toString(2);
 	}
 
 	// 도드람농가 업데이트
 	public String excel6(MultipartFile excelfile, ModelMap model, CommandMap commandMap) throws Exception {
-		excelService.upload(excelfile, model, commandMap);
-		JSONObject result = new JSONObject();
-		result.put("success", true);
-		return  result.toString(2);
+		List<Map<String, String>> result = excelService.upload(excelfile, model, commandMap);
+		JSONObject res = new JSONObject();
+		res.put("success", true);
+		return  res.toString(2);
 	}
 
 	// 자돈등기 파일출력
